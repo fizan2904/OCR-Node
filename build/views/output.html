@@ -24,40 +24,16 @@
       </div>
     </nav>
 
-    <header class="bg-primary text-white">
-      <div class="container text-center">
-        <h1>Optical Character Recognition</h1>
-        <p class="lead">Project built by: </p>
-        <p class="lead">Nagarchi Fizan</p>
-      </div>
-    </header>
-
     <section id="about">
       <div class="container">
         <div class="row">
           <div class="col-lg-8 mx-auto">
-            <h2>About this project</h2>
-            <p class="lead">This project is ment to convert images, pdf or any document to a soft copy so as to reduce the workload of typing all the documents using Tesseract.Its advanteges are</p>
-            <ul>
-              <li>To scan any document on the go</li>
-              <li>Reduce the workload of typing every document</li>
-              <li>Api is also available for integrating into other websites or projects</li>
-              <li>It is very light weight and fast as it is not built on python but on Nodejs</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="services" class="bg-light">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 mx-auto">
-            <h2>Scan the document</h2><br>
-              <form action="/read" method="POST" enctype="multipart/form-data" id="form">
-                <input type="file" id="file" name="upload_file" class="form-group" required>
-              <button type="submit" class="btn btn-primary" id="sub">Submit</button>
-            </div>
+            <% if(error != ""){ %>
+              <h1 style="background-color: #ef6c00; padding: 5px 5px 5px 5px">&nbsp;<%= error %></h1>
+            <% }else{ %>
+              <h2>The output text is:</h2><br>
+              <p style="background-color: #e1f5fe; padding: 5px 5px 5px 5px" class="lead text-left"><%= output %></p>
+            <% } %>
           </div>
         </div>
       </div>
