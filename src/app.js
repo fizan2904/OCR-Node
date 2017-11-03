@@ -38,7 +38,12 @@ import index from './routes/index';
 import read from './routes/read';
 
 app.use('/read', read);
-app.use('/api', api)
+app.use('/api', api);
+
+app.use('/test', (req, res) => {
+	res.status(200).send({"message":"Everything's OK"})
+});
+
 app.use('/', index);
 
 app.listen((process.env.PORT || 3000), () => {
